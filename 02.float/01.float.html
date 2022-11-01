@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 75%;
+      margin: 2rem auto;
+      background: #ccc;
+      /* padding: 1rem; */
+      border-radius: 1rem;
+    }
+
+    .pp {
+      background: #000;
+      color: #fff;
+      padding: 1rem;
+    }
+
+    .float-left {
+      float: left;
+      margin: 1rem;
+    }
+
+    .clear-left {
+      clear: left;
+    }
+
+    .float-right {
+      float: right;
+      margin: 1rem;
+    }
+
+    .clear-right {
+      clear: right;
+    }
+
+    .clear-both {
+      clear: both;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>特性一:浮動元素會從正常流向獨立出來</h2>
+    <p>獨立出來後，後方元素會在 float 元素下方，後方元素裡面文字內容會圍繞著 float 元素。</p>
+
+    <hr>
+
+    <p>float-left</p>
+    <img class="float-left" src="https://picsum.photos/200/200/?random=10">
+    <p class="pp">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore autem aperiam tenetur? Nemo fugit dicta expedita, inventore quo veniam earum
+      exercitationem tempora. Asperiores obcaecati expedita perferendis tempora, maxime odio earum? Veniam sint, recusandae nesciunt expedita inventore maxime
+    </p>
+    <!-- 清除浮動左側 -->
+    <p class="pp clear-left">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eos a? Ut harum, veniam temporibus velit et neque veritatis voluptatibus labore dolores,
+      inventore assumenda odit eius aut, porro suscipit vero alias corporis numquam? Ipsam asperiores nobis aut! Dolorum neque molestias vitae quasi rerum in.
+      Aut deserunt sit ut facere quam amet dolore odio magni iure pariatur quaerat consectetur dicta natus, deleniti reiciendis assumenda nesciunt quae ab
+      saepe, hic vero, modi beatae repellendus sint. Delectus quis repellat distinctio voluptatem iusto minus aliquid ullam ratione quibusdam id quidem quasi,
+      eligendi labore dicta, quos cumque accusamus impedit maxime ad dolorem soluta corporis sint!
+    </p>
+
+    <hr>
+
+    <h2>float-right</h2>
+    <img class="float-right" src="https://picsum.photos/200/200/?random=10">
+    <p class="pp">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore autem aperiam tenetur? Nemo fugit dicta expedita, inventore quo veniam earum
+      exercitationem tempora. Asperiores obcaecati expedita perferendis tempora, maxime odio earum? Veniam sint, recusandae nesciunt expedita inventore maxime
+    </p>
+    <!-- 清除浮動右側 -->
+    <p class="pp clear-right">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eos a? Ut harum, veniam temporibus velit et neque veritatis voluptatibus labore dolores,
+      inventore assumenda odit eius aut, porro suscipit vero alias corporis numquam? Ipsam asperiores nobis aut! Dolorum neque molestias vitae quasi rerum in.
+      Aut deserunt sit ut facere quam amet dolore odio magni iure pariatur quaerat consectetur dicta natus, deleniti reiciendis assumenda nesciunt quae ab
+      saepe, hic vero, modi beatae repellendus sint. Delectus quis repellat distinctio voluptatem iusto minus aliquid ullam ratione quibusdam id quidem quasi,
+      eligendi labore dicta, quos cumque accusamus impedit maxime ad dolorem soluta corporis sint!
+    </p>
+
+    <hr>
+
+    <h2>float-left 和 float-right</h2>
+    <img class="float-left" src="https://picsum.photos/200/200/?random=10">
+    <img class="float-right" src="https://picsum.photos/200/200/?random=10">
+    <p class="pp clear-both">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quis reiciendis ad dolores iusto laborum voluptates minima nulla sint aut officia asperiores
+      velit fuga eaque, sit vitae eos? Odit, deleniti. Earum suscipit cum tempore ipsum quibusdam culpa, similique eaque incidunt iure animi sunt magni
+      architecto. Cumque eos officia nemo inventore nihil dolorum sit beatae voluptatum fuga. Ducimus nisi, id incidunt necessitatibus fuga sed ullam maxime
+      officia iusto ipsa a maiores assumenda, suscipit porro nihil natus saepe repellat architecto. Dignissimos laboriosam quaerat ducimus perspiciatis. Saepe
+      aut tempore dolorem doloribus voluptatibus fugiat debitis molestias, cum adipisci laboriosam. Quibusdam tempora minima cum veniam!
+    </p>
+  </div>
+
+  <div class="container" style="overflow: hidden;">
+    <h2>特性二:浮動會區塊化元素</h2>
+    <ul>
+      <li>具有區塊化特性，將元素轉型成 block。</li>
+      <li>由於脫離正常流向獨立，會影響父元素無法包覆浮動元素，若父元素沒有內容或 padding 會造成元素高度消失。</li>
+      <li>父元素設定 overflow:hidden 可以讓浮動元素再次被包覆。</li>
+    </ul>
+    <span style="float:left">我是 span，誕生時為 inline，float 後變成 block</span>
+    <button style="float:right">我是 button，誕生時為 inline-block，float 後變成 block</button>
+  </div>
+</body>
+
+</html>

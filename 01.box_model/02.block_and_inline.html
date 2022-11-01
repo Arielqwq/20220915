@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding-bottom: 100px;
+    }
+
+    .menu {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      /* 主要為了去除幽靈空白 */
+      font-size: 0;
+      /* width: 75%; */
+      /* margin: auto; */
+      background: deeppink;
+      text-align: center;
+    }
+
+    .menu li {
+      /* 外在行為 inline，乖乖排列 */
+      /* 內在行為 block，可以正常設定盒模型的屬性，例如 width、height */
+      display: inline-block;
+      background: lawngreen;
+      /* 再將文字大小設定回來 */
+      font-size: 1rem;
+    }
+
+    .menu li a {
+      display: inline-block;
+      text-decoration: none;
+      background: yellow;
+      padding: 1rem 2rem;
+    }
+
+    .menu li a:hover {
+      background-color: #000;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>區塊盒(元素)與行內盒(元素)</h1>
+  <p>CSS 是盒子的世界，盒子分為區塊盒與行內盒兩種基本型。</p>
+
+  <h3>請說出以下兩行的差異?</h3>
+  <div>Lorem ipsum dolor sit amet.</div>
+  <span>Lorem ipsum dolor sit amet.</span>
+
+  <hr>
+
+  <h3>試試看設定他們的背景顏色</h3>
+  <div style="background:gold">Lorem ipsum dolor sit amet.</div>
+  <span style="background:deepskyblue">Lorem ipsum dolor sit amet.</span>
+
+  <hr>
+
+  <h2>區塊盒(區塊元素)</h2>
+  <p>例子:div、h1、p、ul、li、table...</p>
+  <ul>
+    <li>預設情況，會在正常流向佔據父元素的空間，也就是由左至右的空間，並且前、後換行，無法與其他元素並排。</li>
+    <li>可以正常使用盒模型 width、height、magin、padding。</li>
+  </ul>
+
+  <div style="background:gold">Lorem ipsum dolor sit amet.</div>
+  <div style="background:gold">Lorem ipsum dolor sit amet.</div>
+  <div style="background:gold;width:500px">即使設定了寬度，看起來有空間讓後方元素並排，但是，並沒有，依舊會佔據父元素的寬度，並且前後換行。</div>
+  <div style="background:gold;width:300px">Lorem ipsum dolor sit amet.</div>
+
+  <h2>行內盒(行內元素)</h2>
+  <p>例子:span、a、em、strong、b...</p>
+  <ul>
+    <li>行內盒只能擁有屬於自己內容的寬度空間。</li>
+    <li>前後不會斷行，本身內容多少寬度就多少，會乖乖在文件流向由左向右、由上而下(父元素空間容納不下時)排列。</li>
+    <li>注意，設定 width、height 都不會有作用！</li>
+  </ul>
+  <span style="background:deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background:deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background:deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background:deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background:deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background:deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background:deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background:deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background:deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background:deepskyblue;">Lorem ipsum dolor sit amet.</span>
+
+  <hr>
+
+  <h3>嘗試設定行內元素的寬、高...</h3>
+  <p>結果:沒作用!</p>
+  <span style="background:deeppink;width:10000px;height:10000px;">Hello</span>
+
+  <hr>
+
+  <h2>製作橫向選單</h2>
+  <ul class="menu">
+    <li><a href="#">LINK</a></li>
+    <li><a href="#">LINK</a></li>
+    <li><a href="#">LINK</a></li>
+    <li><a href="#">LINK</a></li>
+    <li><a href="#">LINK</a></li>
+  </ul>
+
+  <hr>
+
+  <h1>圖片水平置中</h1>
+
+  <h2>需要外容器</h2>
+  <div style="background:#ffa;text-align: center;font-size:0">
+    <img src="https://picsum.photos/300/200/?random=10">
+    <img src="https://picsum.photos/300/200/?random=10">
+    <img src="https://picsum.photos/300/200/?random=10">
+  </div>
+
+  <hr>
+
+  <h2>不需要外容器</h2>
+  <img src="https://picsum.photos/300/200/?random=10" style="display: block;margin:auto;">
+
+</body>
+
+</html>

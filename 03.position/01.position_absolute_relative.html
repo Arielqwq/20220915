@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 75%;
+      margin: auto;
+      border: 1px solid #000;
+      padding: 0 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .box1,
+    .box2,
+    .box3,
+    .box4 {
+      padding: 1rem;
+    }
+
+    .box1 {
+      background-color: pink;
+    }
+
+    .box2 {
+      background-color: palegreen;
+    }
+
+    .box3 {
+      background-color: paleturquoise;
+    }
+
+    .box4 {
+      background-color: blanchedalmond;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .top {
+      top: 0;
+    }
+
+    .bottom {
+      bottom: 0;
+    }
+
+    .left {
+      left: 0;
+    }
+
+    .right {
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>position:relative</h1>
+    <h2>當元素為相對定位時</h2>
+    <ul>
+      <li>使用位移屬性(top、right、bottom、left)會以自身原來位置做位移，並且保留自身原來的空間，也就是說進入定位層也不會被其他元素佔據。</li>
+      <li>沒有任何位移屬性，會留在原地不動，這種 relative 元素常作為 absolute 子元素位移目標的參考依據。</li>
+    </ul>
+    <div class="box1">
+      <h1>box1</h1>
+      <p>鄉民最高來說上去現代化所有都不信譽，打電話球隊空間事業環保一週感興趣氣氛數學，多年標準結束報導身邊工資花蓮筆者擁有顧問，味道走到相關，頁面綠色有一記者不到外國榮譽雙手航空清除，教育評論本頁人群比較下載查詢改造設施追求，貢獻拿出協調意思技術，威脅億元女孩感。</p>
+    </div>
+    <div class="box2 relative" style="left:300px;top:200px;">
+      <h1>box2</h1>
+      <p>鄉民最高來說上去現代化所有都不信譽，打電話球隊空間事業環保一週感興趣氣氛數學，多年標準結束報導身邊工資花蓮筆者擁有顧問，味道走到相關，頁面綠色有一記者不到外國榮譽雙手航空清除，教育評論本頁人群比較下載查詢改造設施追求，貢獻拿出協調意思技術，威脅億元女孩感。</p>
+    </div>
+    <div class="box3">
+      <h1>box3</h1>
+      <p>鄉民最高來說上去現代化所有都不信譽，打電話球隊空間事業環保一週感興趣氣氛數學，多年標準結束報導身邊工資花蓮筆者擁有顧問，味道走到相關，頁面綠色有一記者不到外國榮譽雙手航空清除，教育評論本頁人群比較下載查詢改造設施追求，貢獻拿出協調意思技術，威脅億元女孩感。</p>
+    </div>
+    <div class="box4">
+      <h1>box4</h1>
+      <p>鄉民最高來說上去現代化所有都不信譽，打電話球隊空間事業環保一週感興趣氣氛數學，多年標準結束報導身邊工資花蓮筆者擁有顧問，味道走到相關，頁面綠色有一記者不到外國榮譽雙手航空清除，教育評論本頁人群比較下載查詢改造設施追求，貢獻拿出協調意思技術，威脅億元女孩感。</p>
+    </div>
+  </div>
+
+  <div class="container relative">
+    <h1>position:absolute</h1>
+    <h2>當元素為絕對定位時</h2>
+    <ul>
+      <li>沒有任何位移屬性，該元素會脫離正常流向，原地升至定位層，後方元素依據 CSS 流動特性會流動至絕對定位原素的下方(被遮住)。</li>
+      <li>若祖先原素都找不到定位(absolute、relative、fixed)，最後會以初始容器根元素(html)作為位移目標。</li>
+    </ul>
+    <div class="box1 absolute" style="left:100px;bottom:100px;z-index:1">
+      <h1>box1</h1>
+      <p>鄉民最高來說上去現代化所有都不信譽，打電話球隊空間事業環保一週感興趣氣氛數學，多年標準結束報導身邊工資花蓮筆者擁有顧問，味道走到相關，頁面綠色有一記者不到外國榮譽雙手航空清除，教育評論本頁人群比較下載查詢改造設施追求，貢獻拿出協調意思技術，威脅億元女孩感。</p>
+    </div>
+    <div class="box2 absolute" style="left:200px;bottom:150px;">
+      <h1>box2</h1>
+      <p>鄉民最高來說上去現代化所有都不信譽，打電話球隊空間事業環保一週感興趣氣氛數學，多年標準結束報導身邊工資花蓮筆者擁有顧問，味道走到相關，頁面綠色有一記者不到外國榮譽雙手航空清除，教育評論本頁人群比較下載查詢改造設施追求，貢獻拿出協調意思技術，威脅億元女孩感。</p>
+    </div>
+    <div class="box3">
+      <h1>box3</h1>
+      <p>鄉民最高來說上去現代化所有都不信譽，打電話球隊空間事業環保一週感興趣氣氛數學，多年標準結束報導身邊工資花蓮筆者擁有顧問，味道走到相關，頁面綠色有一記者不到外國榮譽雙手航空清除，教育評論本頁人群比較下載查詢改造設施追求，貢獻拿出協調意思技術，威脅億元女孩感。</p>
+    </div>
+    <div class="box4">
+      <h1>box4</h1>
+      <p>鄉民最高來說上去現代化所有都不信譽，打電話球隊空間事業環保一週感興趣氣氛數學，多年標準結束報導身邊工資花蓮筆者擁有顧問，味道走到相關，頁面綠色有一記者不到外國榮譽雙手航空清除，教育評論本頁人群比較下載查詢改造設施追求，貢獻拿出協調意思技術，威脅億元女孩感。</p>
+    </div>
+  </div>
+</body>
+
+</html>
